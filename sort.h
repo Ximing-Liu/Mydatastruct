@@ -125,6 +125,36 @@ using namespace std;
             HeapAdjust(a, 1, i-1);
         }
     }
+    //归并排序
+    void Merge(vector<int>& a, int low,int mid, int high) {
+        vector<int> b;
+        int i,j;
+        for (int k=low; k<=high;k++) {
+            b[k] = a[k];
+        }
+        int k;
+        for (i = low,j = mid+1,k=i;i<=mid&&j<=high;k++) {
+            if(b[j] < b[i]) {
+                a[k] = b[j];
+                j++;
+            } else {
+                a[k] = b[i];
+                i++;
+            }
+        }
+        while(j<=high) a[k++] = b[j++];
+        while(i<=mid) a[k++] = b[i++];
+    }
+
+    void MergeSort (vector<int>& a, int low, int high) {
+        if (low<high) {
+            int mid = (low+high)/2;
+            MergeSort(a,low,mid);
+            MergeSort(a,mid+1,high);
+            Merge(a,low,mid,high);
+        }=
+    }
+
 
 
 
