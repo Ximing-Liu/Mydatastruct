@@ -152,7 +152,7 @@ using namespace std;
             MergeSort(a,low,mid);
             MergeSort(a,mid+1,high);
             Merge(a,low,mid,high);
-        }=
+        }
     }
 
 
